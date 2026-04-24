@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARAM 出装查询 - 海克斯大乱斗</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .top-bar a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .top-bar a:hover { color: #fff; }
+        .top-bar .update-info {
+            font-size: 12px;
+            color: rgba(255,255,255,0.35);
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px 20px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+        }
+
+        .controls {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            padding: 0 20px;
+        }
+
+        .search-box {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            margin-bottom: 16px;
+        }
+        .search-box:focus-within {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.15);
+        }
+        .search-box input {
+            flex: 1;
+            padding: 12px 22px;
+            border: none;
+            background: transparent;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+        }
+        .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filter-btn {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover { background: rgba(255,255,255,0.12); }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border-color: transparent;
+        }
+        .sort-select {
+            margin-left: auto;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            cursor: pointer;
+            outline: none;
+        }
+        .sort-select option { background: #24243e; color: #fff; }
+
+        .champion-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .champ-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 14px 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+        .champ-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,255,255,0.25);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+        }
+        .champ-card img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.15);
+            margin-bottom: 8px;
+        }
+        .champ-card .name {
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .champ-card .wr {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        .wr-high { color: #00BBA3; }
+        .wr-mid { color: #FFB900; }
+        .wr-low { color: #FF6B00; }
+
+        .tier-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            line-height: 1;
+        }
+        .tier-1 { background: #0093FF; }
+        .tier-2 { background: #00BBA3; }
+        .tier-3 { background: #FFB900; color: #000; }
+        .tier-4 { background: #FF6B00; }
+        .tier-5 { background: #FF3B30; }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 100;
+            backdrop-filter: blur(4px);
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+        .modal-overlay.show { display: flex; justify-content: center; align-items: flex-start; }
+
+        .modal {
+            background: linear-gradient(135deg, #1a1640, #2a2560);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            padding: 28px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.2); }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .modal-header img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2px solid #667eea;
+        }
+        .modal-header .info h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .modal-header .info .stats {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+        .modal-header .info .stats span { margin-right: 12px; }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #667eea;
+        }
+
+        .build-section { margin-bottom: 22px; }
+
+        .item-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .item-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(0,0,0,0.3);
+        }
+        .item-arrow {
+            color: rgba(255,255,255,0.3);
+            font-size: 14px;
+        }
+        .item-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 4px;
+        }
+
+        .augment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+        }
+        .augment-card {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 8px;
+        }
+        .augment-card img {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+        }
+        .augment-card .aug-name {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        .aug-tier {
+            display: inline-block;
+            font-size: 9px;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        .aug-tier-Silver { background: #8B8FA3; color: #fff; }
+        .aug-tier-Gold { background: #C8962D; color: #fff; }
+        .aug-tier-Prismatic { background: linear-gradient(135deg, #A855F7, #667eea); color: #fff; }
+
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: rgba(255,255,255,0.5);
+        }
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255,255,255,0.4);
+            font-size: 15px;
+            grid-column: 1 / -1;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255,255,255,0.2);
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .champion-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
+            .champ-card { padding: 10px 6px; }
+            .champ-card img { width: 44px; height: 44px; }
+            .modal { padding: 20px; }
+            .augment-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <a href="index.html">&larr; 返回工作台</a>
+    <div class="update-info" id="updateInfo">加载中...</div>
+</div>
+
+<div class="header">
+    <h1>ARAM 出装查询</h1>
+    <p>海克斯大乱斗 · 最高胜率出装与海克斯推荐</p>
+</div>
+
+<div class="controls">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索英雄（中文/英文）..." autocomplete="off">
+    </div>
+    <div class="filters">
+        <button class="filter-btn active" data-tier="all">全部</button>
+        <button class="filter-btn" data-tier="1">T1</button>
+        <button class="filter-btn" data-tier="2">T2</button>
+        <button class="filter-btn" data-tier="3">T3</button>
+        <button class="filter-btn" data-tier="4">T4</button>
+        <button class="filter-btn" data-tier="5">T5</button>
+        <select class="sort-select" id="sortSelect">
+            <option value="winrate">胜率排序</option>
+            <option value="pickrate">选取率排序</option>
+            <option value="tier">Tier 排序</option>
+            <option value="name">名称排序</option>
+        </select>
+    </div>
+</div>
+
+<div id="loading" class="loading">
+    <div class="loading-spinner"></div>
+    <div>正在加载英雄数据...</div>
+</div>
+
+<div class="champion-grid" id="championGrid" style="display:none;"></div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modalContent"></div>
+</div>
+
+<div class="footer">
+    <p>数据来源 OP.GG · 仅供参考</p>
+</div>
+
+<script>
+var allChampions = [];
+var currentTier = 'all';
+var currentSort = 'winrate';
+var currentSearch = '';
+
+function init() {
+    fetch('data/aram_builds.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            allChampions = data.champions;
+            document.getElementById('updateInfo').textContent =
+                '数据更新: ' + data.updated_at + ' · 版本 ' + data.patch;
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('championGrid').style.display = 'grid';
+            renderGrid();
+        })
+        .catch(function(err) {
+            document.getElementById('loading').innerHTML =
+                '<div style="color:#FF6B00">加载失败，请刷新重试</div>';
+        });
+}
+
+function renderGrid() {
+    var filtered = allChampions.filter(function(c) {
+        if (currentTier !== 'all' && c.tier !== parseInt(currentTier)) return false;
+        if (currentSearch) {
+            var q = currentSearch.toLowerCase();
+            var matchName = (c.name_cn || '').toLowerCase().indexOf(q) >= 0;
+            var matchEn = c.name.toLowerCase().indexOf(q) >= 0;
+            var matchKey = c.key.toLowerCase().indexOf(q) >= 0;
+            if (!matchName && !matchEn && !matchKey) return false;
+        }
+        return true;
+    });
+
+    filtered.sort(function(a, b) {
+        if (currentSort === 'winrate') return b.win_rate - a.win_rate;
+        if (currentSort === 'pickrate') return b.pick_rate - a.pick_rate;
+        if (currentSort === 'tier') return a.tier - b.tier || b.win_rate - a.win_rate;
+        if (currentSort === 'name') return (a.name_cn || a.name).localeCompare(b.name_cn || b.name, 'zh');
+        return 0;
+    });
+
+    var grid = document.getElementById('championGrid');
+    if (filtered.length === 0) {
+        grid.innerHTML = '<div class="no-results">没有找到匹配的英雄</div>';
+        return;
+    }
+
+    var html = '';
+    for (var i = 0; i < filtered.length; i++) {
+        var c = filtered[i];
+        var wr = (c.win_rate * 100).toFixed(1);
+        var wrClass = c.win_rate >= 0.52 ? 'wr-high' : (c.win_rate >= 0.48 ? 'wr-mid' : 'wr-low');
+        html += '<div class="champ-card" onclick="showDetail(\'' + c.key + '\')">' +
+            '<span class="tier-badge tier-' + c.tier + '">T' + c.tier + '</span>' +
+            '<img src="' + c.image_url + '" alt="' + c.name + '" loading="lazy" onerror="this.style.opacity=0.3">' +
+            '<div class="name">' + (c.name_cn || c.name) + '</div>' +
+            '<div class="wr ' + wrClass + '">' + wr + '%</div>' +
+            '</div>';
+    }
+    grid.innerHTML = html;
+}
+
+function showDetail(key) {
+    var c = null;
+    for (var i = 0; i < allChampions.length; i++) {
+        if (allChampions[i].key === key) { c = allChampions[i]; break; }
+    }
+    if (!c) return;
+
+    var wr = (c.win_rate * 100).toFixed(1);
+    var pr = (c.pick_rate * 100).toFixed(1);
+
+    var html = '<button class="modal-close" onclick="closeModal()">&times;</button>';
+    html += '<div class="modal-header">' +
+        '<img src="' + c.image_url + '" alt="' + c.name + '">' +
+        '<div class="info">' +
+        '<h2>' + (c.name_cn || c.name) + ' <span style="font-size:14px;color:rgba(255,255,255,0.4)">' + c.name + '</span></h2>' +
+        '<div class="stats">' +
+        '<span>胜率 <b style="color:#00BBA3">' + wr + '%</b></span>' +
+        '<span>选取率 ' + pr + '%</span>' +
+        '<span class="tier-badge tier-' + c.tier + '" style="position:static">T' + c.tier + '</span>' +
+        '</div></div></div>';
+
+    if (c.build) {
+        html += '<div class="build-section">';
+        html += '<div class="section-label">推荐出装</div>';
+
+        if (c.build.starter_items && c.build.starter_items.length) {
+            html += '<div class="item-label">起始装备</div><div class="item-row">';
+            for (var i = 0; i < c.build.starter_items.length; i++) {
+                var it = c.build.starter_items[i];
+                if (i > 0) html += '<span class="item-arrow">+</span>';
+                html += '<img class="item-icon" src="' + it.image_url + '?image=q_auto:good,f_png,w_64,h_64" title="' + it.name + '" onerror="this.style.opacity=0.3">';
+            }
+            html += '</div>';
+        }
+
+        if (c.build.boots && c.build.boots.length) {
+            html += '<div class="item-label">鞋子</div><div class="item-row">';
+            for (var i = 0; i < c.build.boots.length; i++) {
+                var bt = c.build.boots[i];
+                if (i > 0) html += '<span class="item-arrow">/</span>';
+                html += '<img class="item-icon" src="' + bt.image_url + '?image=q_auto:good,f_png,w_64,h_64" title="' + bt.name + '" onerror="this.style.opacity=0.3">';
+            }
+            html += '</div>';
+        }
+
+        if (c.build.core_items && c.build.core_items.length) {
+            html += '<div class="item-label">核心装备</div><div class="item-row">';
+            for (var i = 0; i < c.build.core_items.length; i++) {
+                var ci = c.build.core_items[i];
+                if (i > 0) html += '<span class="item-arrow">&rarr;</span>';
+                html += '<img class="item-icon" src="' + ci.image_url + '?image=q_auto:good,f_png,w_64,h_64" title="' + ci.name + '" onerror="this.style.opacity=0.3">';
+            }
+            html += '</div>';
+        }
+        html += '</div>';
+    }
+
+    if (c.augments && c.augments.length) {
+        html += '<div class="build-section">';
+        html += '<div class="section-label">推荐海克斯</div>';
+        html += '<div class="augment-grid">';
+        for (var i = 0; i < c.augments.length; i++) {
+            var a = c.augments[i];
+            var tierClass = 'aug-tier-' + a.tier;
+            html += '<div class="augment-card">' +
+                '<img src="' + a.image_url + '?image=q_auto:good,f_png,w_64,h_64" alt="' + a.name + '" onerror="this.style.opacity=0.3">' +
+                '<div><div class="aug-name">' + a.name + '</div>' +
+                '<span class="aug-tier ' + tierClass + '">' + a.tier + '</span>' +
+                '</div></div>';
+        }
+        html += '</div></div>';
+    }
+
+    document.getElementById('modalContent').innerHTML = html;
+    document.getElementById('modalOverlay').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+});
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    currentSearch = this.value.trim();
+    renderGrid();
+});
+
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        currentTier = this.dataset.tier;
+        renderGrid();
+    });
+});
+
+document.getElementById('sortSelect').addEventListener('change', function() {
+    currentSort = this.value;
+    renderGrid();
+});
+
+init();
+</script>
+
+</body>
+</html>
