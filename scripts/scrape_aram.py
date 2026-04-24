@@ -14,7 +14,7 @@ HEADERS = {
 OPGG_BASE = "https://www.op.gg"
 DDRAGON_VERSIONS_URL = "https://ddragon.leagueoflegends.com/api/versions.json"
 DDRAGON_CHAMPION_URL = "https://ddragon.leagueoflegends.com/cdn/{version}/data/zh_CN/champion.json"
-DDRAGON_IMG_BASE = "https://ddragon.leagueoflegends.com/cdn/{version}/img"
+DDRAGON_ITEM_URL = "https://ddragon.leagueoflegends.com/cdn/{version}/data/zh_CN/item.json"
 
 REQUEST_DELAY = 1.5
 
@@ -41,14 +41,24 @@ def get_ddragon_version():
     return versions[0]
 
 
-def get_chinese_names(version):
+def get_chinese_champion_data(version):
     url = DDRAGON_CHAMPION_URL.format(version=version)
     data = json.loads(fetch(url))
-    mapping = {}
+    result = {}
     for champ in data["data"].values():
-        mapping[champ["id"].lower()] = champ["name"]
-        mapping[champ["key"]] = champ["name"]
-    return mapping
+        key = champ["id"].lower()
+        result[key] = {"name_cn": champ["name"], "title": champ["title"]}
+        result[champ["key"]] = {"name_cn": champ["name"], "title": champ["title"]}
+    return result
+
+
+def get_item_names_cn(version):
+    url = DDRAGON_ITEM_URL.format(version=version)
+    data = json.loads(fetch(url))
+    result = {}
+    for item_id, item in data["data"].items():
+        result[int(item_id)] = item["name"]
+    return result
 
 
 def parse_champion_list(html):
@@ -79,51 +89,64 @@ def parse_champion_list(html):
     return champions
 
 
-def extract_items_from_section(text):
+def extract_items_from_section(text, version, item_names_cn):
     items = []
     seen = set()
-    for m in re.finditer(r'alt="([^"]+)"[^>]*src="([^"]+)"', text):
-        name = m.group(1).replace("&#x27;", "'").replace("&amp;", "&")
-        src = m.group(2).split("?")[0]
-        if "/item/" not in src:
-            continue
-        id_match = re.search(r"/item/(\d+)", src)
-        if not id_match:
-            continue
-        item_id = int(id_match.group(1))
+    for m in re.finditer(r'/item/(\d+)\.png', text):
+        item_id = int(m.group(1))
         if item_id not in seen:
             seen.add(item_id)
-            items.append({"id": item_id, "name": name, "image_url": src})
+            img_url = f"https://ddragon.leagueoflegends.com/cdn/{version}/img/item/{item_id}.png"
+            cn_name = item_names_cn.get(item_id, str(item_id))
+            items.append({"id": item_id, "name_cn": cn_name, "image_url": img_url})
     return items
 
 
-def parse_build_page(html):
+def parse_build_page(html, version, item_names_cn):
     clean = unescape_rsc(html)
     build = {"starter_items": [], "boots": [], "core_items": []}
 
-    starter_idx = clean.find("Starter Items")
-    boots_idx = clean.find("Boots</th>")
-    if boots_idx < 0:
-        boots_idx = clean.find("Boots</td>")
-    core_idx = clean.find("Core Builds")
+    starter_idx = max(clean.find("starter_items_0"), clean.find("Starter Items"), -1)
+    boots_idx = max(clean.find("boots_0"), clean.find("Boots Table"), -1)
+    core_idx = max(clean.find("core_items_0"), clean.find("Core Builds"), -1)
 
     if starter_idx > 0:
         end = boots_idx if boots_idx > starter_idx else starter_idx + 3000
-        build["starter_items"] = extract_items_from_section(clean[starter_idx:end])[:3]
+        build["starter_items"] = extract_items_from_section(clean[starter_idx:end], version, item_names_cn)[:3]
 
     if boots_idx > 0:
         end = core_idx if core_idx > boots_idx else boots_idx + 3000
-        build["boots"] = extract_items_from_section(clean[boots_idx:end])[:2]
+        build["boots"] = extract_items_from_section(clean[boots_idx:end], version, item_names_cn)[:2]
 
     if core_idx > 0:
-        core_section = clean[core_idx:core_idx + 3000]
-        items = extract_items_from_section(core_section)
-        build["core_items"] = items[:4]
+        core_section = clean[core_idx:core_idx + 5000]
+        items = extract_items_from_section(core_section, version, item_names_cn)
+        build["core_items"] = items[:6]
 
     return build
 
 
-def parse_augments_page(html):
+def parse_augments_page_cn(html):
+    clean = unescape_rsc(html)
+    augments = []
+    aug_pattern = r'alt="([^"]+)"[^>]*src="([^"]*aram-augment/[^"]+)"'
+    matches = re.findall(aug_pattern, clean)
+    seen = set()
+    for name, img_url in matches:
+        name_clean = name.replace("&#x27;", "'").replace("&amp;", "&")
+        if name_clean not in seen:
+            seen.add(name_clean)
+            img_clean = img_url.split("?")[0]
+            tier = detect_augment_tier(clean, name)
+            augments.append({
+                "name_cn": name_clean,
+                "image_url": img_clean,
+                "tier": tier,
+            })
+    return augments
+
+
+def parse_augments_page_en(html):
     clean = unescape_rsc(html)
     augments = []
     aug_pattern = r'alt="([^"]+)"[^>]*src="([^"]*aram-augment/[^"]+)"'
@@ -147,25 +170,15 @@ def detect_augment_tier(html, aug_name):
     idx = html.find(f'alt="{aug_name}"')
     if idx < 0:
         return "Silver"
-    section = html[idx:idx + 600]
+    section = html[idx:idx + 800]
     if "prismatic" in section.lower() or "Prism" in section:
         return "Prismatic"
-    gold_indicators = [
-        "paint0_linear_7_1009",
-        "gold",
-        "#FFD700",
-        "text-yellow",
-    ]
-    for gi in gold_indicators:
-        if gi in section:
-            return "Gold"
-    silver_indicators = [
-        "paint0_linear_7_1005",
-        "text-red-500",
-    ]
-    for si in silver_indicators:
-        if si in section:
-            return "Silver"
+    gold_svg = "paint0_linear_7_1009"
+    if gold_svg in section:
+        return "Gold"
+    silver_svg = "paint0_linear_7_1005"
+    if silver_svg in section:
+        return "Silver"
     return "Silver"
 
 
@@ -179,9 +192,13 @@ def main():
     print(f"  Latest version: {version}")
     patch = ".".join(version.split(".")[:2])
 
-    print("Fetching Chinese champion names...")
-    cn_names = get_chinese_names(version)
-    print(f"  Got {len(cn_names)} name mappings")
+    print("Fetching Chinese champion data...")
+    cn_data = get_chinese_champion_data(version)
+    print(f"  Got {len(cn_data)} mappings")
+
+    print("Fetching Chinese item names...")
+    item_names_cn = get_item_names_cn(version)
+    print(f"  Got {len(item_names_cn)} item names")
 
     print("Fetching ARAM champion list...")
     aram_html = fetch(f"{OPGG_BASE}/lol/modes/aram")
@@ -204,30 +221,50 @@ def main():
     for i, champ in enumerate(champions):
         key = champ["key"]
         champ_name = champ["name"]
-        cn_name = cn_names.get(key.lower(), cn_names.get(key, champ_name))
-        champ["name_cn"] = cn_name
-        champ["image_url"] = f"{DDRAGON_IMG_BASE.format(version=version)}/champion/{champ_name}.png"
+        champ_cn = cn_data.get(key.lower(), cn_data.get(key, {}))
+        champ["name_cn"] = champ_cn.get("name_cn", champ_name)
+        champ["title"] = champ_cn.get("title", "")
+        champ["image_url"] = f"https://ddragon.leagueoflegends.com/cdn/{version}/img/champion/{champ_name}.png"
 
-        print(f"[{i+1}/{total}] {champ_name} ({cn_name})...", end=" ", flush=True)
+        print(f"[{i+1}/{total}] {champ_name} ({champ['name_cn']}/{champ['title']})...", end=" ", flush=True)
 
         try:
             time.sleep(REQUEST_DELAY)
             build_html = fetch(f"{OPGG_BASE}/lol/modes/aram/{key}/build")
-            champ["build"] = parse_build_page(build_html)
+            champ["build"] = parse_build_page(build_html, version, item_names_cn)
             items_count = len(champ["build"]["core_items"])
-            print(f"build({items_count} items)", end=" ", flush=True)
+            print(f"build({items_count})", end=" ", flush=True)
         except Exception as e:
-            print(f"build_error({e})", end=" ", flush=True)
+            print(f"build_err({e})", end=" ", flush=True)
             champ["build"] = {"starter_items": [], "boots": [], "core_items": []}
 
         if key in mayhem_champions:
             try:
                 time.sleep(REQUEST_DELAY)
-                mayhem_champ_html = fetch(f"{OPGG_BASE}/lol/modes/aram-mayhem/{key}/build")
-                champ["augments"] = parse_augments_page(mayhem_champ_html)
-                print(f"augments({len(champ['augments'])})")
+                # Fetch Chinese version for augment names
+                cn_mayhem_html = fetch(f"{OPGG_BASE}/zh-cn/lol/modes/aram-mayhem/{key}/build")
+                cn_augs = parse_augments_page_cn(cn_mayhem_html)
+
+                time.sleep(REQUEST_DELAY)
+                en_mayhem_html = fetch(f"{OPGG_BASE}/lol/modes/aram-mayhem/{key}/build")
+                en_augs = parse_augments_page_en(en_mayhem_html)
+
+                # Merge: use Chinese names with English fallback, match by image URL
+                merged = []
+                for en_aug in en_augs:
+                    aug = dict(en_aug)
+                    for cn_aug in cn_augs:
+                        if cn_aug["image_url"] == en_aug["image_url"]:
+                            aug["name_cn"] = cn_aug["name_cn"]
+                            break
+                    if "name_cn" not in aug:
+                        aug["name_cn"] = aug["name"]
+                    merged.append(aug)
+
+                champ["augments"] = merged
+                print(f"augs({len(merged)})")
             except Exception as e:
-                print(f"augment_error({e})")
+                print(f"aug_err({e})")
                 champ["augments"] = []
         else:
             champ["augments"] = []

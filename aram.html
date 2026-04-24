@@ -35,7 +35,7 @@
 
         .header {
             text-align: center;
-            padding: 30px 20px 20px;
+            padding: 28px 20px 18px;
         }
         .header h1 {
             font-size: 28px;
@@ -146,7 +146,8 @@
             height: 56px;
             border-radius: 50%;
             border: 2px solid rgba(255,255,255,0.15);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            background: rgba(0,0,0,0.3);
         }
         .champ-card .name {
             font-size: 13px;
@@ -155,9 +156,15 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .champ-card .sub-name {
+            font-size: 10px;
+            color: rgba(255,255,255,0.35);
+            margin-top: 1px;
+        }
         .champ-card .wr {
             font-size: 12px;
-            margin-top: 4px;
+            margin-top: 3px;
+            font-weight: 500;
         }
         .wr-high { color: #00BBA3; }
         .wr-mid { color: #FFB900; }
@@ -183,11 +190,11 @@
             display: none;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
             z-index: 100;
             backdrop-filter: blur(4px);
             overflow-y: auto;
-            padding: 40px 20px;
+            padding: 30px 16px;
         }
         .modal-overlay.show { display: flex; justify-content: center; align-items: flex-start; }
 
@@ -195,9 +202,9 @@
             background: linear-gradient(135deg, #1a1640, #2a2560);
             border: 1px solid rgba(255,255,255,0.12);
             border-radius: 16px;
-            max-width: 700px;
+            max-width: 800px;
             width: 100%;
-            padding: 28px;
+            padding: 32px;
             position: relative;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
@@ -206,13 +213,13 @@
             position: absolute;
             top: 16px;
             right: 16px;
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             border: none;
             background: rgba(255,255,255,0.1);
             color: #fff;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -224,95 +231,130 @@
         .modal-header {
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 18px;
+            margin-bottom: 28px;
         }
         .modal-header img {
-            width: 64px;
-            height: 64px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
             border: 2px solid #667eea;
+            background: rgba(0,0,0,0.3);
         }
         .modal-header .info h2 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
+        }
+        .modal-header .info .sub {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            margin-top: 2px;
         }
         .modal-header .info .stats {
-            font-size: 13px;
+            font-size: 14px;
             color: rgba(255,255,255,0.6);
-            margin-top: 4px;
+            margin-top: 6px;
         }
-        .modal-header .info .stats span { margin-right: 12px; }
+        .modal-header .info .stats span { margin-right: 14px; }
 
         .section-label {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 10px;
-            padding-left: 10px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 12px;
+            padding-left: 12px;
             border-left: 3px solid #667eea;
         }
 
-        .build-section { margin-bottom: 22px; }
+        .build-section { margin-bottom: 26px; }
 
         .item-row {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+        }
+        .item-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
         }
         .item-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.15);
             background: rgba(0,0,0,0.3);
         }
+        .item-name-tag {
+            font-size: 10px;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            max-width: 56px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
         .item-arrow {
             color: rgba(255,255,255,0.3);
-            font-size: 14px;
+            font-size: 16px;
+            margin: 0 2px;
         }
         .item-label {
-            font-size: 11px;
+            font-size: 12px;
             color: rgba(255,255,255,0.45);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
 
         .augment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 8px;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 10px;
         }
         .augment-card {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 8px;
-            padding: 8px;
+            border-radius: 10px;
+            padding: 10px 12px;
+            transition: background 0.2s;
         }
+        .augment-card:hover { background: rgba(255,255,255,0.1); }
         .augment-card img {
-            width: 32px;
-            height: 32px;
-            border-radius: 4px;
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            background: rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+        .augment-card .aug-info {
+            min-width: 0;
         }
         .augment-card .aug-name {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 500;
             line-height: 1.3;
         }
+        .augment-card .aug-name-en {
+            font-size: 10px;
+            color: rgba(255,255,255,0.35);
+            margin-top: 1px;
+        }
         .aug-tier {
             display: inline-block;
-            font-size: 9px;
-            padding: 1px 5px;
-            border-radius: 3px;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
             font-weight: 600;
-            margin-top: 2px;
+            margin-top: 3px;
         }
-        .aug-tier-Silver { background: #8B8FA3; color: #fff; }
-        .aug-tier-Gold { background: #C8962D; color: #fff; }
+        .aug-tier-Silver { background: #6B7280; color: #fff; }
+        .aug-tier-Gold { background: #B8860B; color: #fff; }
         .aug-tier-Prismatic { background: linear-gradient(135deg, #A855F7, #667eea); color: #fff; }
 
         .loading {
@@ -350,8 +392,9 @@
             .champion-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
             .champ-card { padding: 10px 6px; }
             .champ-card img { width: 44px; height: 44px; }
-            .modal { padding: 20px; }
-            .augment-grid { grid-template-columns: 1fr; }
+            .modal { padding: 20px 16px; }
+            .augment-grid { grid-template-columns: 1fr 1fr; }
+            .item-icon { width: 40px; height: 40px; }
         }
     </style>
 </head>
@@ -369,7 +412,7 @@
 
 <div class="controls">
     <div class="search-box">
-        <input type="text" id="searchInput" placeholder="搜索英雄（中文/英文）..." autocomplete="off">
+        <input type="text" id="searchInput" placeholder="搜索英雄（称号/真名/英文名均可）..." autocomplete="off">
     </div>
     <div class="filters">
         <button class="filter-btn active" data-tier="all">全部</button>
@@ -419,7 +462,7 @@ function init() {
             document.getElementById('championGrid').style.display = 'grid';
             renderGrid();
         })
-        .catch(function(err) {
+        .catch(function() {
             document.getElementById('loading').innerHTML =
                 '<div style="color:#FF6B00">加载失败，请刷新重试</div>';
         });
@@ -430,10 +473,12 @@ function renderGrid() {
         if (currentTier !== 'all' && c.tier !== parseInt(currentTier)) return false;
         if (currentSearch) {
             var q = currentSearch.toLowerCase();
-            var matchName = (c.name_cn || '').toLowerCase().indexOf(q) >= 0;
-            var matchEn = c.name.toLowerCase().indexOf(q) >= 0;
-            var matchKey = c.key.toLowerCase().indexOf(q) >= 0;
-            if (!matchName && !matchEn && !matchKey) return false;
+            var fields = [c.name_cn || '', c.title || '', c.name || '', c.key || ''];
+            var found = false;
+            for (var j = 0; j < fields.length; j++) {
+                if (fields[j].toLowerCase().indexOf(q) >= 0) { found = true; break; }
+            }
+            if (!found) return false;
         }
         return true;
     });
@@ -459,8 +504,9 @@ function renderGrid() {
         var wrClass = c.win_rate >= 0.52 ? 'wr-high' : (c.win_rate >= 0.48 ? 'wr-mid' : 'wr-low');
         html += '<div class="champ-card" onclick="showDetail(\'' + c.key + '\')">' +
             '<span class="tier-badge tier-' + c.tier + '">T' + c.tier + '</span>' +
-            '<img src="' + c.image_url + '" alt="' + c.name + '" loading="lazy" onerror="this.style.opacity=0.3">' +
+            '<img src="' + c.image_url + '" alt="' + c.name + '" loading="lazy">' +
             '<div class="name">' + (c.name_cn || c.name) + '</div>' +
+            '<div class="sub-name">' + (c.title || '') + '</div>' +
             '<div class="wr ' + wrClass + '">' + wr + '%</div>' +
             '</div>';
     }
@@ -476,12 +522,15 @@ function showDetail(key) {
 
     var wr = (c.win_rate * 100).toFixed(1);
     var pr = (c.pick_rate * 100).toFixed(1);
+    var displayName = c.name_cn || c.name;
+    var subName = (c.title || '') + ' · ' + c.name;
 
     var html = '<button class="modal-close" onclick="closeModal()">&times;</button>';
     html += '<div class="modal-header">' +
         '<img src="' + c.image_url + '" alt="' + c.name + '">' +
         '<div class="info">' +
-        '<h2>' + (c.name_cn || c.name) + ' <span style="font-size:14px;color:rgba(255,255,255,0.4)">' + c.name + '</span></h2>' +
+        '<h2>' + displayName + '</h2>' +
+        '<div class="sub">' + subName + '</div>' +
         '<div class="stats">' +
         '<span>胜率 <b style="color:#00BBA3">' + wr + '%</b></span>' +
         '<span>选取率 ' + pr + '%</span>' +
@@ -497,7 +546,7 @@ function showDetail(key) {
             for (var i = 0; i < c.build.starter_items.length; i++) {
                 var it = c.build.starter_items[i];
                 if (i > 0) html += '<span class="item-arrow">+</span>';
-                html += '<img class="item-icon" src="' + it.image_url + '?image=q_auto:good,f_png,w_64,h_64" title="' + it.name + '" onerror="this.style.opacity=0.3">';
+                html += buildItemHtml(it);
             }
             html += '</div>';
         }
@@ -507,17 +556,17 @@ function showDetail(key) {
             for (var i = 0; i < c.build.boots.length; i++) {
                 var bt = c.build.boots[i];
                 if (i > 0) html += '<span class="item-arrow">/</span>';
-                html += '<img class="item-icon" src="' + bt.image_url + '?image=q_auto:good,f_png,w_64,h_64" title="' + bt.name + '" onerror="this.style.opacity=0.3">';
+                html += buildItemHtml(bt);
             }
             html += '</div>';
         }
 
         if (c.build.core_items && c.build.core_items.length) {
-            html += '<div class="item-label">核心装备</div><div class="item-row">';
+            html += '<div class="item-label">核心装备（按顺序出装）</div><div class="item-row">';
             for (var i = 0; i < c.build.core_items.length; i++) {
                 var ci = c.build.core_items[i];
                 if (i > 0) html += '<span class="item-arrow">&rarr;</span>';
-                html += '<img class="item-icon" src="' + ci.image_url + '?image=q_auto:good,f_png,w_64,h_64" title="' + ci.name + '" onerror="this.style.opacity=0.3">';
+                html += buildItemHtml(ci);
             }
             html += '</div>';
         }
@@ -531,9 +580,13 @@ function showDetail(key) {
         for (var i = 0; i < c.augments.length; i++) {
             var a = c.augments[i];
             var tierClass = 'aug-tier-' + a.tier;
+            var augNameCn = a.name_cn || a.name;
+            var augNameEn = a.name || '';
             html += '<div class="augment-card">' +
-                '<img src="' + a.image_url + '?image=q_auto:good,f_png,w_64,h_64" alt="' + a.name + '" onerror="this.style.opacity=0.3">' +
-                '<div><div class="aug-name">' + a.name + '</div>' +
+                '<img src="' + a.image_url + '?image=q_auto:good,f_png,w_64,h_64" alt="' + augNameCn + '">' +
+                '<div class="aug-info">' +
+                '<div class="aug-name">' + augNameCn + '</div>' +
+                (augNameCn !== augNameEn ? '<div class="aug-name-en">' + augNameEn + '</div>' : '') +
                 '<span class="aug-tier ' + tierClass + '">' + a.tier + '</span>' +
                 '</div></div>';
         }
@@ -543,6 +596,14 @@ function showDetail(key) {
     document.getElementById('modalContent').innerHTML = html;
     document.getElementById('modalOverlay').classList.add('show');
     document.body.style.overflow = 'hidden';
+}
+
+function buildItemHtml(item) {
+    var name = item.name_cn || item.name;
+    return '<div class="item-wrapper">' +
+        '<img class="item-icon" src="' + item.image_url + '" title="' + name + '">' +
+        '<div class="item-name-tag">' + name + '</div>' +
+        '</div>';
 }
 
 function closeModal() {
