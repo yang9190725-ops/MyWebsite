@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-07-31",
   "patch": "16.15",
   "champions": [
     {
@@ -615,10 +615,10 @@
           "name_cn": "泰坦的坚决"
         },
         {
-          "name": "急速之追求",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
+          "name": "高压锅",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestPressureCooker_large.png",
           "tier": "Silver",
-          "name_cn": "急速之追求"
+          "name_cn": "高压锅"
         }
       ]
     },
@@ -1116,16 +1116,16 @@
           "name_cn": "穿针引线"
         },
         {
-          "name": "全凭身法",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Dashing_large.png",
-          "tier": "Silver",
-          "name_cn": "全凭身法"
-        },
-        {
           "name": "无尽大杀四方",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EndlessDecimate_large.png",
           "tier": "Silver",
           "name_cn": "无尽大杀四方"
+        },
+        {
+          "name": "全凭身法",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Dashing_large.png",
+          "tier": "Silver",
+          "name_cn": "全凭身法"
         },
         {
           "name": "最终形态",
@@ -1358,16 +1358,16 @@
           "name_cn": "超凡邪恶"
         },
         {
-          "name": "最终形态",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/FinalForm_large.png",
-          "tier": "Silver",
-          "name_cn": "最终形态"
-        },
-        {
           "name": "虚幻武器",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EtherealWeapon_large.png",
           "tier": "Silver",
           "name_cn": "虚幻武器"
+        },
+        {
+          "name": "最终形态",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/FinalForm_large.png",
+          "tier": "Silver",
+          "name_cn": "最终形态"
         },
         {
           "name": "冰寒",
@@ -2513,16 +2513,16 @@
           "name_cn": "黎明使者的坚决"
         },
         {
-          "name": "高压锅",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestPressureCooker_large.png",
-          "tier": "Silver",
-          "name_cn": "高压锅"
-        },
-        {
           "name": "扇巴掌",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SlapAround_large.png",
           "tier": "Silver",
           "name_cn": "扇巴掌"
+        },
+        {
+          "name": "高压锅",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestPressureCooker_large.png",
+          "tier": "Silver",
+          "name_cn": "高压锅"
         },
         {
           "name": "泰坦的坚决",
@@ -3762,16 +3762,16 @@
           "name_cn": "升级：无尽之刃"
         },
         {
-          "name": "最万用的瞄准镜",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopiestWeapons_large.png",
-          "tier": "Silver",
-          "name_cn": "最万用的瞄准镜"
-        },
-        {
           "name": "暴击律动",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/CriticalRhythm_large.png",
           "tier": "Silver",
           "name_cn": "暴击律动"
+        },
+        {
+          "name": "最万用的瞄准镜",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopiestWeapons_large.png",
+          "tier": "Silver",
+          "name_cn": "最万用的瞄准镜"
         },
         {
           "name": "台风",
@@ -4132,16 +4132,16 @@
           "name_cn": "扇巴掌"
         },
         {
-          "name": "星界躯体",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/CelestialBody_large.png",
-          "tier": "Silver",
-          "name_cn": "星界躯体"
-        },
-        {
           "name": "术士果汁盒",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WarlockJuicebox_large.png",
           "tier": "Silver",
           "name_cn": "术士果汁盒"
+        },
+        {
+          "name": "星界躯体",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/CelestialBody_large.png",
+          "tier": "Silver",
+          "name_cn": "星界躯体"
         },
         {
           "name": "歌利亚巨人",
@@ -7629,16 +7629,16 @@
           "name_cn": "渴血"
         },
         {
-          "name": "黎明使者的坚决",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/DawnbringersResolve_large.png",
-          "tier": "Silver",
-          "name_cn": "黎明使者的坚决"
-        },
-        {
           "name": "无尽大杀四方",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EndlessDecimate_large.png",
           "tier": "Silver",
           "name_cn": "无尽大杀四方"
+        },
+        {
+          "name": "黎明使者的坚决",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/DawnbringersResolve_large.png",
+          "tier": "Silver",
+          "name_cn": "黎明使者的坚决"
         },
         {
           "name": "大力",
@@ -8034,16 +8034,16 @@
           "name_cn": "大力"
         },
         {
-          "name": "渴血",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GoreDrink_large.png",
-          "tier": "Silver",
-          "name_cn": "渴血"
-        },
-        {
           "name": "无尽大杀四方",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EndlessDecimate_large.png",
           "tier": "Silver",
           "name_cn": "无尽大杀四方"
+        },
+        {
+          "name": "渴血",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GoreDrink_large.png",
+          "tier": "Silver",
+          "name_cn": "渴血"
         },
         {
           "name": "踢踏舞",
@@ -8670,16 +8670,16 @@
           "name_cn": "吞噬灵魂"
         },
         {
-          "name": "扇巴掌",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SlapAround_large.png",
-          "tier": "Silver",
-          "name_cn": "扇巴掌"
-        },
-        {
           "name": "虚幻武器",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EtherealWeapon_large.png",
           "tier": "Silver",
           "name_cn": "虚幻武器"
+        },
+        {
+          "name": "扇巴掌",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SlapAround_large.png",
+          "tier": "Silver",
+          "name_cn": "扇巴掌"
         },
         {
           "name": "大法师",
@@ -9363,10 +9363,10 @@
           "name_cn": "暗影疾奔"
         },
         {
-          "name": "掷骰狂人",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/HighRoller_large.png",
+          "name": "秘术冲拳",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MysticPunch_large.png",
           "tier": "Silver",
-          "name_cn": "掷骰狂人"
+          "name_cn": "秘术冲拳"
         }
       ]
     },
@@ -10972,16 +10972,16 @@
           "name_cn": "双生火焰"
         },
         {
-          "name": "魔法飞弹",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MagicMissile_large.png",
-          "tier": "Silver",
-          "name_cn": "魔法飞弹"
-        },
-        {
           "name": "暴击飞弹",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/CriticalMissile_large.png",
           "tier": "Silver",
           "name_cn": "暴击飞弹"
+        },
+        {
+          "name": "魔法飞弹",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MagicMissile_large.png",
+          "tier": "Silver",
+          "name_cn": "魔法飞弹"
         },
         {
           "name": "亮出你的剑",
@@ -11883,16 +11883,16 @@
           "name_cn": "罪恶快感"
         },
         {
-          "name": "邦！",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Bonk_large.png",
-          "tier": "Silver",
-          "name_cn": "邦！"
-        },
-        {
           "name": "大力",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BluntForce_large.png",
           "tier": "Silver",
           "name_cn": "大力"
+        },
+        {
+          "name": "邦！",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Bonk_large.png",
+          "tier": "Silver",
+          "name_cn": "邦！"
         },
         {
           "name": "无尽大杀四方",
@@ -13432,16 +13432,16 @@
           "name_cn": "渴血"
         },
         {
-          "name": "快步",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
-          "tier": "Silver",
-          "name_cn": "快步"
-        },
-        {
           "name": "大力",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BluntForce_large.png",
           "tier": "Silver",
           "name_cn": "大力"
+        },
+        {
+          "name": "快步",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
+          "tier": "Silver",
+          "name_cn": "快步"
         },
         {
           "name": "泰坦的坚决",
@@ -13948,16 +13948,16 @@
           "name_cn": "信念者的强化"
         },
         {
-          "name": "神圣干预",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SlowActingPainkillers_large.png",
-          "tier": "Silver",
-          "name_cn": "神圣干预"
-        },
-        {
           "name": "仁慈打击",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
           "tier": "Silver",
           "name_cn": "仁慈打击"
+        },
+        {
+          "name": "神圣干预",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SlowActingPainkillers_large.png",
+          "tier": "Silver",
+          "name_cn": "神圣干预"
         },
         {
           "name": "风语者的祝福",
@@ -14714,16 +14714,16 @@
           "name_cn": "灵魄炸弹"
         },
         {
-          "name": "信念者的强化",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EmpoweredByTheFaithful_large.png",
-          "tier": "Silver",
-          "name_cn": "信念者的强化"
-        },
-        {
           "name": "仁慈打击",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
           "tier": "Silver",
           "name_cn": "仁慈打击"
+        },
+        {
+          "name": "信念者的强化",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EmpoweredByTheFaithful_large.png",
+          "tier": "Silver",
+          "name_cn": "信念者的强化"
         },
         {
           "name": "神圣干预",
@@ -16668,16 +16668,16 @@
           "name_cn": "超凡邪恶"
         },
         {
-          "name": "巨人杀手",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GiantSlayer_large.png",
-          "tier": "Silver",
-          "name_cn": "巨人杀手"
-        },
-        {
           "name": "双生火焰",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/TwinFire_large.png",
           "tier": "Silver",
           "name_cn": "双生火焰"
+        },
+        {
+          "name": "巨人杀手",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GiantSlayer_large.png",
+          "tier": "Silver",
+          "name_cn": "巨人杀手"
         },
         {
           "name": "尤里卡",
@@ -19119,16 +19119,16 @@
           "name_cn": "尤里卡"
         },
         {
-          "name": "升级：中娅",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/UpgradeZH_large.png",
-          "tier": "Silver",
-          "name_cn": "升级：中娅"
-        },
-        {
           "name": "无限循环往复",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/InfiniteRecursion_large.png",
           "tier": "Silver",
           "name_cn": "无限循环往复"
+        },
+        {
+          "name": "升级：中娅",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/UpgradeZH_large.png",
+          "tier": "Silver",
+          "name_cn": "升级：中娅"
         }
       ]
     },
@@ -20008,16 +20008,16 @@
           "name_cn": "最终形态"
         },
         {
-          "name": "牙仙子",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestBurstingTeeth_large.png",
-          "tier": "Silver",
-          "name_cn": "牙仙子"
-        },
-        {
           "name": "升级：收集者",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/UpgradeCollector_large.png",
           "tier": "Silver",
           "name_cn": "升级：收集者"
+        },
+        {
+          "name": "牙仙子",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestBurstingTeeth_large.png",
+          "tier": "Silver",
+          "name_cn": "牙仙子"
         },
         {
           "name": "暗影疾奔",
@@ -20026,16 +20026,16 @@
           "name_cn": "暗影疾奔"
         },
         {
-          "name": "渴血",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GoreDrink_large.png",
-          "tier": "Silver",
-          "name_cn": "渴血"
-        },
-        {
           "name": "全凭身法",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Dashing_large.png",
           "tier": "Silver",
           "name_cn": "全凭身法"
+        },
+        {
+          "name": "渴血",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GoreDrink_large.png",
+          "tier": "Silver",
+          "name_cn": "渴血"
         },
         {
           "name": "杀戮时间到了",
@@ -20656,16 +20656,16 @@
           "name_cn": "暗影疾奔"
         },
         {
-          "name": "超凡邪恶",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
-          "tier": "Silver",
-          "name_cn": "超凡邪恶"
-        },
-        {
           "name": "狂徒豪气",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/OutlawsGrit_large.png",
           "tier": "Silver",
           "name_cn": "狂徒豪气"
+        },
+        {
+          "name": "超凡邪恶",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
+          "tier": "Silver",
+          "name_cn": "超凡邪恶"
         },
         {
           "name": "尤里卡",
@@ -20784,16 +20784,16 @@
           "name_cn": "黎明使者的坚决"
         },
         {
-          "name": "藏身草丛",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BrushPower_large.png",
-          "tier": "Silver",
-          "name_cn": "藏身草丛"
-        },
-        {
           "name": "扳机炼狱",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MadScientist_large.png",
           "tier": "Silver",
           "name_cn": "扳机炼狱"
+        },
+        {
+          "name": "藏身草丛",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BrushPower_large.png",
+          "tier": "Silver",
+          "name_cn": "藏身草丛"
         },
         {
           "name": "质变：棱彩阶",
@@ -21953,16 +21953,16 @@
           "name_cn": "魔法飞弹"
         },
         {
-          "name": "全凭身法",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Dashing_large.png",
-          "tier": "Silver",
-          "name_cn": "全凭身法"
-        },
-        {
           "name": "杀意翻涌",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/KillSecure_large.png",
           "tier": "Silver",
           "name_cn": "杀意翻涌"
+        },
+        {
+          "name": "全凭身法",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Dashing_large.png",
+          "tier": "Silver",
+          "name_cn": "全凭身法"
         }
       ]
     },
