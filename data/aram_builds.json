@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02",
+  "updated_at": "2026-08-03",
   "patch": "16.15",
   "champions": [
     {
@@ -615,10 +615,10 @@
           "name_cn": "泰坦的坚决"
         },
         {
-          "name": "急速之追求",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
+          "name": "高压锅",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestPressureCooker_large.png",
           "tier": "Silver",
-          "name_cn": "急速之追求"
+          "name_cn": "高压锅"
         }
       ]
     },
@@ -810,16 +810,16 @@
       },
       "augments": [
         {
-          "name": "尤里卡",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Eureka_large.png",
-          "tier": "Silver",
-          "name_cn": "尤里卡"
-        },
-        {
           "name": "术士果汁盒",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WarlockJuicebox_large.png",
           "tier": "Silver",
           "name_cn": "术士果汁盒"
+        },
+        {
+          "name": "尤里卡",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Eureka_large.png",
+          "tier": "Silver",
+          "name_cn": "尤里卡"
         },
         {
           "name": "魔法飞弹",
@@ -989,16 +989,16 @@
           "name_cn": "渴血"
         },
         {
-          "name": "战争交响乐",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SymphonyOfWar_large.png",
-          "tier": "Silver",
-          "name_cn": "战争交响乐"
-        },
-        {
           "name": "狂徒豪气",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/OutlawsGrit_large.png",
           "tier": "Silver",
           "name_cn": "狂徒豪气"
+        },
+        {
+          "name": "战争交响乐",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SymphonyOfWar_large.png",
+          "tier": "Silver",
+          "name_cn": "战争交响乐"
         },
         {
           "name": "秘术冲拳",
@@ -1514,10 +1514,10 @@
           "name_cn": "最终形态"
         },
         {
-          "name": "黎明使者的坚决",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/DawnbringersResolve_large.png",
+          "name": "飞升仪式",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GlassCannon_large.png",
           "tier": "Silver",
-          "name_cn": "黎明使者的坚决"
+          "name_cn": "飞升仪式"
         }
       ]
     },
@@ -2519,16 +2519,16 @@
           "name_cn": "扇巴掌"
         },
         {
-          "name": "高压锅",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestPressureCooker_large.png",
-          "tier": "Silver",
-          "name_cn": "高压锅"
-        },
-        {
           "name": "泰坦的坚决",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/IAmTheJuggernaut_large.png",
           "tier": "Silver",
           "name_cn": "泰坦的坚决"
+        },
+        {
+          "name": "高压锅",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestPressureCooker_large.png",
+          "tier": "Silver",
+          "name_cn": "高压锅"
         }
       ]
     },
@@ -4241,16 +4241,16 @@
           "name_cn": "残忍"
         },
         {
-          "name": "地形专家",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/LightningStrikes_large.png",
-          "tier": "Silver",
-          "name_cn": "地形专家"
-        },
-        {
           "name": "秘术冲拳",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MysticPunch_large.png",
           "tier": "Silver",
           "name_cn": "秘术冲拳"
+        },
+        {
+          "name": "地形专家",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/LightningStrikes_large.png",
+          "tier": "Silver",
+          "name_cn": "地形专家"
         },
         {
           "name": "黎明使者的坚决",
@@ -4283,10 +4283,10 @@
           "name_cn": "升级：耀光"
         },
         {
-          "name": "邦！",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Bonk_large.png",
+          "name": "炽燃利息",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BloodMoney2_large.png",
           "tier": "Silver",
-          "name_cn": "邦！"
+          "name_cn": "炽燃利息"
         }
       ]
     },
@@ -4537,10 +4537,10 @@
           "name_cn": "升级：献祭"
         },
         {
-          "name": "泰坦的坚决",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/IAmTheJuggernaut_large.png",
+          "name": "大力",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BluntForce_large.png",
           "tier": "Silver",
-          "name_cn": "泰坦的坚决"
+          "name_cn": "大力"
         }
       ]
     },
@@ -5018,16 +5018,16 @@
           "name_cn": "巨人杀手"
         },
         {
-          "name": "万用瞄准镜",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopedWeapons_large.png",
-          "tier": "Silver",
-          "name_cn": "万用瞄准镜"
-        },
-        {
           "name": "灵魂虹吸",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SoulSiphon_large.png",
           "tier": "Silver",
           "name_cn": "灵魂虹吸"
+        },
+        {
+          "name": "万用瞄准镜",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopedWeapons_large.png",
+          "tier": "Silver",
+          "name_cn": "万用瞄准镜"
         },
         {
           "name": "暴击律动",
@@ -5653,16 +5653,16 @@
           "name_cn": "黎明使者的坚决"
         },
         {
-          "name": "吞噬灵魂",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SoulEater_large.png",
-          "tier": "Silver",
-          "name_cn": "吞噬灵魂"
-        },
-        {
           "name": "升级：献祭",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/UpgradeImmolate_large.png",
           "tier": "Silver",
           "name_cn": "升级：献祭"
+        },
+        {
+          "name": "吞噬灵魂",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SoulEater_large.png",
+          "tier": "Silver",
+          "name_cn": "吞噬灵魂"
         },
         {
           "name": "高压锅",
@@ -5888,16 +5888,16 @@
           "name_cn": "炼狱导管"
         },
         {
-          "name": "魔法飞弹",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MagicMissile_large.png",
-          "tier": "Silver",
-          "name_cn": "魔法飞弹"
-        },
-        {
           "name": "超凡邪恶",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
           "tier": "Silver",
           "name_cn": "超凡邪恶"
+        },
+        {
+          "name": "魔法飞弹",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MagicMissile_large.png",
+          "tier": "Silver",
+          "name_cn": "魔法飞弹"
         },
         {
           "name": "尤里卡",
@@ -6010,16 +6010,16 @@
           "name_cn": "夜狩"
         },
         {
-          "name": "渴血",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GoreDrink_large.png",
-          "tier": "Silver",
-          "name_cn": "渴血"
-        },
-        {
           "name": "无尽大杀四方",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/EndlessDecimate_large.png",
           "tier": "Silver",
           "name_cn": "无尽大杀四方"
+        },
+        {
+          "name": "渴血",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GoreDrink_large.png",
+          "tier": "Silver",
+          "name_cn": "渴血"
         },
         {
           "name": "秘术冲拳",
@@ -6541,16 +6541,16 @@
           "name_cn": "狂热者"
         },
         {
-          "name": "魔法飞弹",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MagicMissile_large.png",
-          "tier": "Silver",
-          "name_cn": "魔法飞弹"
-        },
-        {
           "name": "关键暴击",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ItsCritical_large.png",
           "tier": "Silver",
           "name_cn": "关键暴击"
+        },
+        {
+          "name": "魔法飞弹",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MagicMissile_large.png",
+          "tier": "Silver",
+          "name_cn": "魔法飞弹"
         },
         {
           "name": "踢踏舞",
@@ -6559,10 +6559,10 @@
           "name_cn": "踢踏舞"
         },
         {
-          "name": "巨人杀手",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GiantSlayer_large.png",
+          "name": "升级：无尽之刃",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/UpgradeIE_large.png",
           "tier": "Silver",
-          "name_cn": "巨人杀手"
+          "name_cn": "升级：无尽之刃"
         }
       ]
     },
@@ -8694,16 +8694,16 @@
           "name_cn": "纯粹主义者 - 术师"
         },
         {
-          "name": "急速之追求",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
-          "tier": "Silver",
-          "name_cn": "急速之追求"
-        },
-        {
           "name": "精怪魔法",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/FeyMagic_large.png",
           "tier": "Silver",
           "name_cn": "精怪魔法"
+        },
+        {
+          "name": "急速之追求",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GenericAbilityAugmentIcon_Gold.png",
+          "tier": "Silver",
+          "name_cn": "急速之追求"
         },
         {
           "name": "由心及物",
@@ -8820,16 +8820,16 @@
           "name_cn": "钢化你心"
         },
         {
-          "name": "吞噬灵魂",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SoulEater_large.png",
-          "tier": "Silver",
-          "name_cn": "吞噬灵魂"
-        },
-        {
           "name": "升级：献祭",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/UpgradeImmolate_large.png",
           "tier": "Silver",
           "name_cn": "升级：献祭"
+        },
+        {
+          "name": "吞噬灵魂",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SoulEater_large.png",
+          "tier": "Silver",
+          "name_cn": "吞噬灵魂"
         },
         {
           "name": "歌利亚巨人",
@@ -9057,16 +9057,16 @@
           "name_cn": "重量级打击手"
         },
         {
-          "name": "钢化你心",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Quest_SteelYourHeart_large.png",
-          "tier": "Silver",
-          "name_cn": "钢化你心"
-        },
-        {
           "name": "星界躯体",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/CelestialBody_large.png",
           "tier": "Silver",
           "name_cn": "星界躯体"
+        },
+        {
+          "name": "钢化你心",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Quest_SteelYourHeart_large.png",
+          "tier": "Silver",
+          "name_cn": "钢化你心"
         },
         {
           "name": "狂徒豪气",
@@ -10208,16 +10208,16 @@
           "name_cn": "渴血"
         },
         {
-          "name": "狂徒豪气",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/OutlawsGrit_large.png",
-          "tier": "Silver",
-          "name_cn": "狂徒豪气"
-        },
-        {
           "name": "穿针引线",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ThreadTheNeedle_large.png",
           "tier": "Silver",
           "name_cn": "穿针引线"
+        },
+        {
+          "name": "狂徒豪气",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/OutlawsGrit_large.png",
+          "tier": "Silver",
+          "name_cn": "狂徒豪气"
         },
         {
           "name": "大力",
@@ -10576,16 +10576,16 @@
           "name_cn": "尤里卡"
         },
         {
-          "name": "巫师式思考",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WitchfulThinking_large.png",
-          "tier": "Silver",
-          "name_cn": "巫师式思考"
-        },
-        {
           "name": "超凡邪恶",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
           "tier": "Silver",
           "name_cn": "超凡邪恶"
+        },
+        {
+          "name": "巫师式思考",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WitchfulThinking_large.png",
+          "tier": "Silver",
+          "name_cn": "巫师式思考"
         },
         {
           "name": "术士果汁盒",
@@ -10876,16 +10876,16 @@
           "name_cn": "狙神飞星"
         },
         {
-          "name": "急救用具",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/FirstAidKit_large.png",
-          "tier": "Silver",
-          "name_cn": "急救用具"
-        },
-        {
           "name": "纯粹主义者 - 术师",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/PuristCaster_large.png",
           "tier": "Silver",
           "name_cn": "纯粹主义者 - 术师"
+        },
+        {
+          "name": "急救用具",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/FirstAidKit_large.png",
+          "tier": "Silver",
+          "name_cn": "急救用具"
         }
       ]
     },
@@ -11612,16 +11612,16 @@
           "name_cn": "狂徒豪气"
         },
         {
-          "name": "秘术冲拳",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MysticPunch_large.png",
-          "tier": "Silver",
-          "name_cn": "秘术冲拳"
-        },
-        {
           "name": "渴血",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GoreDrink_large.png",
           "tier": "Silver",
           "name_cn": "渴血"
+        },
+        {
+          "name": "秘术冲拳",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MysticPunch_large.png",
+          "tier": "Silver",
+          "name_cn": "秘术冲拳"
         },
         {
           "name": "罪恶快感",
@@ -12299,10 +12299,10 @@
           "name_cn": "秘术冲拳"
         },
         {
-          "name": "超凡邪恶",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
+          "name": "巫师式思考",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WitchfulThinking_large.png",
           "tier": "Silver",
-          "name_cn": "超凡邪恶"
+          "name_cn": "巫师式思考"
         }
       ]
     },
@@ -12933,16 +12933,16 @@
           "name_cn": "台风"
         },
         {
-          "name": "万用瞄准镜",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopedWeapons_large.png",
-          "tier": "Silver",
-          "name_cn": "万用瞄准镜"
-        },
-        {
           "name": "罪恶快感",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GetExcited_large.png",
           "tier": "Silver",
           "name_cn": "罪恶快感"
+        },
+        {
+          "name": "万用瞄准镜",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopedWeapons_large.png",
+          "tier": "Silver",
+          "name_cn": "万用瞄准镜"
         }
       ]
     },
@@ -14081,16 +14081,16 @@
           "name_cn": "超凡邪恶"
         },
         {
-          "name": "巫师式思考",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WitchfulThinking_large.png",
-          "tier": "Silver",
-          "name_cn": "巫师式思考"
-        },
-        {
           "name": "秘术冲拳",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/MysticPunch_large.png",
           "tier": "Silver",
           "name_cn": "秘术冲拳"
+        },
+        {
+          "name": "巫师式思考",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WitchfulThinking_large.png",
+          "tier": "Silver",
+          "name_cn": "巫师式思考"
         }
       ]
     },
@@ -15108,16 +15108,16 @@
           "name_cn": "天音爆"
         },
         {
-          "name": "全心为你",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/AllForYou_large.png",
-          "tier": "Silver",
-          "name_cn": "全心为你"
-        },
-        {
           "name": "神圣干预",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SlowActingPainkillers_large.png",
           "tier": "Silver",
           "name_cn": "神圣干预"
+        },
+        {
+          "name": "全心为你",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/AllForYou_large.png",
+          "tier": "Silver",
+          "name_cn": "全心为你"
         },
         {
           "name": "喂呜喂呜",
@@ -15509,10 +15509,10 @@
           "name_cn": "无尽大杀四方"
         },
         {
-          "name": "杀戮时间到了",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ItsKillingTime_large.png",
+          "name": "黎明使者的坚决",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/DawnbringersResolve_large.png",
           "tier": "Silver",
-          "name_cn": "杀戮时间到了"
+          "name_cn": "黎明使者的坚决"
         }
       ]
     },
@@ -17696,16 +17696,16 @@
           "name_cn": "纯粹主义者 - 术师"
         },
         {
-          "name": "更万用的瞄准镜",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopierWeapons_large.png",
-          "tier": "Silver",
-          "name_cn": "更万用的瞄准镜"
-        },
-        {
           "name": "术士果汁盒",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WarlockJuicebox_large.png",
           "tier": "Silver",
           "name_cn": "术士果汁盒"
+        },
+        {
+          "name": "更万用的瞄准镜",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ScopierWeapons_large.png",
+          "tier": "Silver",
+          "name_cn": "更万用的瞄准镜"
         },
         {
           "name": "巫师式思考",
@@ -18448,16 +18448,16 @@
           "name_cn": "虚幻武器"
         },
         {
-          "name": "狂热者",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Zealot_large.png",
-          "tier": "Silver",
-          "name_cn": "狂热者"
-        },
-        {
           "name": "暴击飞弹",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/CriticalMissile_large.png",
           "tier": "Silver",
           "name_cn": "暴击飞弹"
+        },
+        {
+          "name": "狂热者",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Zealot_large.png",
+          "tier": "Silver",
+          "name_cn": "狂热者"
         },
         {
           "name": "神射法师",
@@ -18601,16 +18601,16 @@
           "name_cn": "超凡邪恶"
         },
         {
-          "name": "喂呜喂呜",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WeeWooWeeWoo_large.png",
-          "tier": "Silver",
-          "name_cn": "喂呜喂呜"
-        },
-        {
           "name": "天音爆",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SonicBoom_large.png",
           "tier": "Silver",
           "name_cn": "天音爆"
+        },
+        {
+          "name": "喂呜喂呜",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WeeWooWeeWoo_large.png",
+          "tier": "Silver",
+          "name_cn": "喂呜喂呜"
         }
       ]
     },
@@ -18697,16 +18697,16 @@
           "name_cn": "重量级打击手"
         },
         {
-          "name": "钢化你心",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Quest_SteelYourHeart_large.png",
-          "tier": "Silver",
-          "name_cn": "钢化你心"
-        },
-        {
           "name": "飞身踢",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Dropkick_large.png",
           "tier": "Silver",
           "name_cn": "飞身踢"
+        },
+        {
+          "name": "钢化你心",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Quest_SteelYourHeart_large.png",
+          "tier": "Silver",
+          "name_cn": "钢化你心"
         },
         {
           "name": "歌利亚巨人",
@@ -19083,16 +19083,16 @@
           "name_cn": "尤里卡"
         },
         {
-          "name": "超凡邪恶",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
-          "tier": "Silver",
-          "name_cn": "超凡邪恶"
-        },
-        {
           "name": "纯粹主义者 - 术师",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/PuristCaster_large.png",
           "tier": "Silver",
           "name_cn": "纯粹主义者 - 术师"
+        },
+        {
+          "name": "超凡邪恶",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
+          "tier": "Silver",
+          "name_cn": "超凡邪恶"
         },
         {
           "name": "急急小子",
@@ -19360,16 +19360,16 @@
           "name_cn": "穿针引线"
         },
         {
-          "name": "超凡邪恶",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
-          "tier": "Silver",
-          "name_cn": "超凡邪恶"
-        },
-        {
           "name": "巫师式思考",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/WitchfulThinking_large.png",
           "tier": "Silver",
           "name_cn": "巫师式思考"
+        },
+        {
+          "name": "超凡邪恶",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/ARAM_PhenomenalEvil_large.png",
+          "tier": "Silver",
+          "name_cn": "超凡邪恶"
         },
         {
           "name": "最终形态",
@@ -19739,16 +19739,16 @@
           "name_cn": "魔法飞弹"
         },
         {
-          "name": "巨人杀手",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GiantSlayer_large.png",
-          "tier": "Silver",
-          "name_cn": "巨人杀手"
-        },
-        {
           "name": "大法师",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/Eureka_large.png",
           "tier": "Silver",
           "name_cn": "大法师"
+        },
+        {
+          "name": "巨人杀手",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GiantSlayer_large.png",
+          "tier": "Silver",
+          "name_cn": "巨人杀手"
         },
         {
           "name": "最终形态",
@@ -20760,6 +20760,12 @@
           "name_cn": "渴血"
         },
         {
+          "name": "炽燃利息",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BloodMoney2_large.png",
+          "tier": "Silver",
+          "name_cn": "炽燃利息"
+        },
+        {
           "name": "牙仙子",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestBurstingTeeth_large.png",
           "tier": "Silver",
@@ -20776,12 +20782,6 @@
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/SpiritualPurification_large.png",
           "tier": "Silver",
           "name_cn": "心灵净化"
-        },
-        {
-          "name": "炽燃利息",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/BloodMoney2_large.png",
-          "tier": "Silver",
-          "name_cn": "炽燃利息"
         },
         {
           "name": "黎明使者的坚决",
@@ -21019,16 +21019,16 @@
           "name_cn": "全凭身法"
         },
         {
-          "name": "牙仙子",
-          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestBurstingTeeth_large.png",
-          "tier": "Silver",
-          "name_cn": "牙仙子"
-        },
-        {
           "name": "罪恶快感",
           "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/GetExcited_large.png",
           "tier": "Silver",
           "name_cn": "罪恶快感"
+        },
+        {
+          "name": "牙仙子",
+          "image_url": "https://opgg-static.akamaized.net/meta/images/lol/latest/aram-augment/QuestBurstingTeeth_large.png",
+          "tier": "Silver",
+          "name_cn": "牙仙子"
         },
         {
           "name": "飞升仪式",
